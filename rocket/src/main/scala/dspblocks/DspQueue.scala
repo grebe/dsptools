@@ -71,8 +71,8 @@ class AHBDspQueue(val depth: Int, val baseAddr: BigInt = 0, concurrency: Int = 4
   extends AHBRegisterRouter(baseAddr, beatBytes = 8, concurrency = concurrency)(
     new AHBRegBundle(depth, _))(
     new AHBRegModule(depth, _, _)
-      with DspQueueImp[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBBundle]
-  ) with DspQueue[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBBundle]
+      with DspQueueImp[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]
+  ) with DspQueue[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]
     with AHBDspBlock {
   val mem = Some(node)
 }

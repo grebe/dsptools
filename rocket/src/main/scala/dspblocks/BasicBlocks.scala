@@ -74,7 +74,7 @@ abstract class Passthrough[D, U, EO, EI, B <: Data](val params: PassthroughParam
 
 class AHBPassthrough(params: PassthroughParams)(implicit p: Parameters)
   extends Passthrough[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters,
-    AHBBundle](params) with AHBBasicBlock
+    AHBSlaveBundle](params) with AHBBasicBlock
 
 class APBPassthrough(params: PassthroughParams)(implicit p: Parameters)
   extends Passthrough[APBMasterPortParameters, APBSlavePortParameters, APBEdgeParameters, APBEdgeParameters,
@@ -124,7 +124,7 @@ abstract class ByteRotate[D, U, EO, EI, B <: Data]()(implicit p: Parameters) ext
 }
 
 class AHBByteRotate()(implicit  p: Parameters) extends
-  ByteRotate[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBBundle]()(p)
+  ByteRotate[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]()(p)
   with AHBBasicBlock
 
 class APBByteRotate()(implicit  p: Parameters) extends
