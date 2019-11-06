@@ -73,7 +73,7 @@ class AHBDspQueue(val depth: Int, val baseAddr: BigInt = 0, concurrency: Int = 4
     new AHBRegModule(depth, _, _)
       with DspQueueImp[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]
   ) with DspQueue[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]
-    with AHBDspBlock {
+    with AHBSlaveDspBlock {
   val mem = Some(node)
 }
 
