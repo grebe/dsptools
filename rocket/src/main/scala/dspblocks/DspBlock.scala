@@ -146,11 +146,7 @@ trait AXI4DspBlockWithBus extends AXI4DspBlock {
   val mem = Some(bus.node)
 }
 
-<<<<<<< HEAD
-trait AHBDspBlock extends DspBlock[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]
-=======
 trait AHBSlaveDspBlock extends DspBlock[AHBMasterPortParameters, AHBSlavePortParameters, AHBEdgeParameters, AHBEdgeParameters, AHBSlaveBundle]
->>>>>>> master
 
 trait AHBSlaveDspBlockWithBus extends AHBSlaveDspBlock {
   val bus = LazyModule(new AHBFanout)

@@ -1,7 +1,6 @@
 package freechips.rocketchip.amba.axi4stream
 
 import chisel3._
-
 import chisel3.util.{Counter, log2Ceil}
 import freechips.rocketchip.config.Parameters
 import freechips.rocketchip.diplomacy._
