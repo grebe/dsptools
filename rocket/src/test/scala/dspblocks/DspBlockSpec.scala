@@ -17,7 +17,7 @@ class DspBlockSpec extends FlatSpec with Matchers {
     val lazymod = LazyModule(new AXI4Passthrough(params) with AXI4StandaloneBlock)
     val dut = () => lazymod.module
 
-    chisel3.iotesters.Driver.execute(Array("-tbn", "firrtl", "-fiwv"), dut) {
+    chisel3.iotesters.Driver.execute(Array("-tbn", "verilator", "-fiwv"), dut) {
       c => new AXI4PassthroughTester(lazymod)
     } should be (true)
   }
@@ -48,7 +48,7 @@ class DspBlockSpec extends FlatSpec with Matchers {
     val lazymod = LazyModule(new AXI4ByteRotate() with AXI4StandaloneBlock)
     val dut = () => lazymod.module
 
-    chisel3.iotesters.Driver.execute(Array(/*"-tiv",*/ "-tbn", "firrtl", "-fiwv"), dut) {
+    chisel3.iotesters.Driver.execute(Array(/*"-tiv",*/ "-tbn", "verilator", "-fiwv"), dut) {
       c => new AXI4ByteRotateTester(lazymod)
     } should be (true)
   }
